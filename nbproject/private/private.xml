@@ -5,10 +5,8 @@
         <group>
             <file>file:/C:/Users/Drew/Documents/GitHub/Lucky-Lanes/src/main/java/controllers/AddToQuestionnaireController.java</file>
             <file>file:/C:/Users/Drew/Documents/GitHub/Lucky-Lanes/src/main/java/controllers/AddQuestionController.java</file>
-            <file>file:/C:/Users/Drew/Documents/GitHub/Lucky-Lanes/src/main/java/controllers/ManageQuestionsController.java</file>
-            <file>file:/C:/Users/Drew/Documents/GitHub/Lucky-Lanes/src/main/java/controllers/EditQuestionsController.java</file>
             <file>file:/C:/Users/Drew/Documents/GitHub/Lucky-Lanes/src/main/resources/view/addToQuestionnaire.fxml</file>
-            <file>file:/C:/Users/Drew/Documents/GitHub/Lucky-Lanes/src/main/resources/view/ManageQuestions.fxml</file>
+            <file>file:/C:/Users/Drew/Documents/GitHub/Lucky-Lanes/src/main/java/controllers/EditQuestionsController.java</file>
             <file>file:/C:/Users/Drew/Documents/GitHub/Lucky-Lanes/src/main/java/Database.java</file>
         </group>
     </open-files>

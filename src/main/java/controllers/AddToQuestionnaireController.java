@@ -384,16 +384,23 @@ public class AddToQuestionnaireController implements Initializable {
         }
         else
         {
+            Database.connect();
+            System.out.println("1");
+            String sql ="DROP TABLE IF EXISTS TEST__"+getTableName().toUpperCase()+";";
+            Database.executeUpdate(sql);
+            sql = "CREATE TABLE TEST__"+getTableName().toUpperCase()+" (ID INT PRIMARY KEY AUTO_INCREMENT, Question VARCHAR(255), Option1 VARCHAR(255), Option2 VARCHAR(255), Option3 VARCHAR(255), Option4 VARCHAR(255));";
+            Database.executeUpdate(sql);
+            System.out.println("2");
             try{
-                System.out.println("1");
-                String sql ="DROP TABLE IF EXISTS "+getTableName().toUpperCase()+";";
-                Database.executeUpdate(sql);
-                sql = "CREATE TABLE "+getTableName().toUpperCase()+" (ID INT PRIMARY KEY AUTO_INCREMENT, Question VARCHAR(255), Option1 VARCHAR(255), Option2 VARCHAR(255), Option3 VARCHAR(255), Option4 VARCHAR(255));";
-                Database.executeUpdate(sql);
-                System.out.println("2");
-                Database.connect();
+                Database.close();
+            }catch(Exception e){
+            Database.close();
+            }
+            
+            try{
                 for(int i=0;i<Questions.size();i++)
                 {
+                    Database.connect();
                     System.out.println(Questions.get(i));
                     ResultSet questionInfo = Database.searchQuery("SELECT * FROM QUESTION WHERE ID=" + Questions.get(i) + ";");
                     questionInfo.next();
@@ -408,7 +415,7 @@ public class AddToQuestionnaireController implements Initializable {
                     System.out.println(option3);
                     String option4 = questionInfo.getString(9);
                     System.out.println(option4);
-                    sql = "INSERT INTO "+getTableName().toUpperCase()+" VALUES (null,"
+                    sql = "INSERT INTO TEST__"+getTableName().toUpperCase()+" VALUES (null,"
                         + "'" + mainQuestion + "',"
                         + "'" + option1 + "',"
                         + "'" + option2 + "',"
@@ -416,13 +423,19 @@ public class AddToQuestionnaireController implements Initializable {
                         + "'" + option4 + "');";
                         System.out.println(sql);
                         Database.executeUpdate(sql);
+                        Database.close();
                 }
+                try{
+                    Database.close();
+                }catch(Exception e){
+                    
+                }
+                Database.close();  
             }
             catch (Exception e){
                 
-            }finally {
-                Database.close();
             }
+            Database.close();
             btnCreate.setText("Table Created");
         }
     }
