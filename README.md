@@ -45,10 +45,14 @@ import be.quodlibet.boxable.*;
 ## On launch
 A prompt will appear asking you to connect to a database, you have the option to dismiss this for the time being and add 
 one later. There are a couple databases that are inside the the project files from the repository named "TheFinalTest.mv.db" and "TestDatabases.mv.db". TestDatabases file has group members testing the program with data from themselves and TheFinalTest database has random people entered already. You can at any point switch databases or create new ones by using the settings
- drop down and clicking create new database or open existing database.
+drop down and clicking create new database or open existing database.
+ 
 
 ## Complete documentation
 [Documentation Station](https://docs.google.com/document/d/1CYt3Xl13mugHgATuaXxcm7oLQJDwlJRIyBNsAmsLcEI/edit#)
+
+## AWS DYNAMO PROPOSAL
+[Dynamo Proposal](https://1drv.ms/w/s!ApyoRKYVKKTKlD34YvTRtBiGq3xu?e=LhUZMr)
 
 ## Known problems 
 1. when using the included TheFinalTest.mv.db database there is a problem creating questions for the test. they do not
